@@ -48,3 +48,7 @@ No incluidos en esta merge (prioridad baja / no en lista de alta): `ibercredito`
 
 - Añadido `solvia` (documented): SolviaDPO@solvia.es, protecciondatos@solvia.es.
 - `aktua_legacy` en roster JSON remite a Intrum; no embebido en wizard para evitar doble envío a dpo.es@intrum.com.
+
+## 2026-09-18 — sync infomediarios desde wizard
+
+`roster/infomediary.json` quedó con solo 5 (ASEDIE round). Se restauró la lista completa del wizard (13): Axesor, Informa, eInforma, Accumin/Datacentric, Iberinform, Camerdata, Netamo, Equifax (infomediario), Infoempresa, inAtlas, Crédito y Caución, Economía 3, CoRegistros.
