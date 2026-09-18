@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
-    <linearGradient id="g" x1="30%" y1="12%" x2="72%" y2="92%">
-      <stop offset="0%" stop-color="#ff4d42"/>
-      <stop offset="55%" stop-color="#ff3b30"/>
-      <stop offset="100%" stop-color="#b80000"/>
+    <linearGradient id="g" x1="28%" y1="8%" x2="74%" y2="94%">
+      <stop offset="0%" stop-color="#b7adff"/>
+      <stop offset="48%" stop-color="#6d5ef5"/>
+      <stop offset="100%" stop-color="#352890"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="14" fill="#0a0505"/>
-  <path d="M32 10c8 0 15 7 18 20 3 14-2 28-18 28S11 44 14 30C17 17 24 10 32 10Z" fill="url(#g)"/>
-  <ellipse cx="26" cy="30" rx="7" ry="8" fill="#fff" fill-opacity=".28"/>
+  <rect width="64" height="64" rx="14" fill="#0a0a12"/>
+  <path d="M32 8.5C41 12 49 14 52.2 14.8c1.5.4 2.8 1.8 2.8 3.4V32c0 10.4-7.8 18-23 22.8C16.8 50 9 42.4 9 32V18.2c0-1.6 1.3-3 2.8-3.4C15 14 23 12 32 8.5Z" fill="url(#g)"/>
+  <path d="M22 33.2l7 7 14.4-15.2" fill="none" stroke="#f5f0e6" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
