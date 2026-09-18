@@ -10,7 +10,7 @@ Versión **2.0.0**. Licencia MIT. Solo jurisdicción española (RGPD / LOPDGDD /
 
 **Añadir DataBye:** [https://x.ai/bot/-M2E0mNqSbuPgYBEtU-Oa](https://x.ai/bot/-M2E0mNqSbuPgYBEtU-Oa)
 
-Tras importar, conecta **Gmail** u **Outlook** (OAuth). Sin eso no se pueden enviar correos. Código auditable en este repo. Landing: [databy.686f6c61.dev](https://databy.686f6c61.dev/).
+Tras importar, conecta **Gmail** u **Outlook** (OAuth). Sin eso no se pueden enviar correos. Código auditable en este repo. Landing: [databye.686f6c61.dev](https://databye.686f6c61.dev/).
 
 
 ## Qué incluye este repositorio
