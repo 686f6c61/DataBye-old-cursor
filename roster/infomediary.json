@@ -1,0 +1,85 @@
+[
+  {
+    "id": "infoempresa",
+    "name": "Infoempresa",
+    "category": "infomediary",
+    "emails": [
+      "contacto@infoempresa.com"
+    ],
+    "alt_emails": [],
+    "url": "https://www.infoempresa.com/",
+    "notes": "Asociado ASEDIE-style / infomediario de datos mercantiles. FAQ documenta contacto@infoempresa.com para modificar datos de cargos/personas físicas tras acreditar. No está en el núcleo actual DataBye brokers.",
+    "confidence": "documented",
+    "source_urls": [
+      "https://www.infoempresa.com/es-es/es/faqs",
+      "https://www.asedie.es/es/nuestros-asociados"
+    ]
+  },
+  {
+    "id": "inatlas",
+    "name": "inAtlas (Intelligent Atlas)",
+    "category": "infomediary",
+    "emails": [
+      "info@inatlas.com"
+    ],
+    "alt_emails": [],
+    "url": "https://www.inatlas.com/",
+    "notes": "Asociado ASEDIE (geomarketing/datos). Cláusula de privacidad en web indica ejercicio de derechos en info@inatlas.com. Canal genérico pero documentado para ARCO.",
+    "confidence": "documented",
+    "source_urls": [
+      "https://www.inatlas.com/es/empresa/",
+      "https://www.asedie.es/es/nuestros-asociados"
+    ]
+  },
+  {
+    "id": "credito_y_caucion",
+    "name": "Crédito y Caución (Atradius)",
+    "category": "infomediary",
+    "emails": [
+      "dpo@atradius.com"
+    ],
+    "alt_emails": [],
+    "url": "https://www.creditoycaucion.es/",
+    "notes": "Seguro de crédito + inteligencia/información empresarial B2B (grupo Atradius). Declaración de privacidad ES documenta DPO en dpo@atradius.com.",
+    "confidence": "documented",
+    "source_urls": [
+      "https://www.creditoycaucion.es/es/declaracion-de-privacidad"
+    ]
+  },
+  {
+    "id": "economia3",
+    "name": "Economía 3 (ECO3 Multimedia)",
+    "category": "infomediary",
+    "emails": [
+      "lopd.empresas@economia3.com"
+    ],
+    "alt_emails": [
+      "administracion@economia3.info",
+      "marketing@economia3.info"
+    ],
+    "url": "https://economia3.com/",
+    "notes": "Asociado ASEDIE. Política de privacidad documenta DPD lopd.empresas@economia3.com; derechos también a administracion@economia3.info. Perfil más media/datos editoriales que bureau mercantil clásico.",
+    "confidence": "documented",
+    "source_urls": [
+      "https://economia3.com/politica-de-privacidad/",
+      "https://www.asedie.es/es/nuestros-asociados"
+    ]
+  },
+  {
+    "id": "coregistros",
+    "name": "CoRegistros",
+    "category": "infomediary",
+    "emails": [
+      "dpo@coregistros.com"
+    ],
+    "alt_emails": [
+      "info@coregistros.com"
+    ],
+    "url": "https://www.coregistros.com/",
+    "notes": "Broker/enriquecimiento leads B2C y B2B (España, sede Barcelona). Política de privacidad documenta DPO dpo@coregistros.com para ejercicio de derechos RGPD.",
+    "confidence": "documented",
+    "source_urls": [
+      "https://www.coregistros.com/fr/politique-de-confidentialite/"
+    ]
+  }
+]
