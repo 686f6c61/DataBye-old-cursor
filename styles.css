@@ -8,6 +8,8 @@
   --line: rgba(245, 240, 230, 0.12);
   --glow: rgba(245, 240, 230, 0.08);
   --warn: #e8c94a;
+  --accent: #6d5ef5;
+  --accent-soft: rgba(109, 94, 245, 0.35);
   --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --sans: "IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   --display: "Fraunces", Georgia, "Times New Roman", serif;
@@ -105,12 +107,12 @@ code {
   text-decoration: none;
   color: var(--cream);
 }
-.brand-drop {
+.brand-mark {
   width: 22px;
   height: 22px;
   flex-shrink: 0;
   display: block;
-  filter: drop-shadow(0 0 6px rgba(255, 59, 48, 0.45));
+  filter: drop-shadow(0 0 6px var(--accent-soft));
 }
 .brand .mark,
 .footer-brand .mark,
@@ -193,7 +195,7 @@ code {
   width: min(52vw, 520px);
   height: min(52vw, 520px);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,59,48,0.12) 0%, transparent 68%);
+  background: radial-gradient(circle, rgba(109, 94, 245, 0.16) 0%, transparent 68%);
   pointer-events: none;
   filter: blur(8px);
 }
@@ -311,7 +313,7 @@ h1 {
 .btn-ghost { background: transparent; }
 .btn-lg { padding: 0.9rem 1.5rem; font-size: 1.02rem; }
 
-/* animated red teardrop agent */
+/* calm geometric brand mark */
 .hero-agent {
   position: relative;
   width: min(100%, 320px);
@@ -322,7 +324,7 @@ h1 {
   position: absolute;
   inset: 8% 4%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 59, 48, 0.42) 0%, rgba(225, 6, 0, 0.12) 42%, transparent 72%);
+  background: radial-gradient(circle, rgba(109, 94, 245, 0.4) 0%, rgba(61, 46, 168, 0.14) 42%, transparent 72%);
   filter: blur(22px);
   animation: glowPulse 5s ease-in-out infinite;
 }
@@ -331,22 +333,15 @@ h1 {
   height: auto;
   display: block;
   animation: agentFloat 6.5s ease-in-out infinite;
-  filter: drop-shadow(0 0 32px rgba(255, 59, 48, 0.35));
+  filter: drop-shadow(0 0 32px rgba(109, 94, 245, 0.36));
 }
-.drop-body {
-  transform-origin: 120px 140px;
-  animation: dropPulse 4.2s ease-in-out infinite;
+.mark-body {
+  transform-origin: 120px 128px;
+  animation: markPulse 5.5s ease-in-out infinite;
 }
-.drop-ground {
+.mark-ground {
   animation: groundPulse 6.5s ease-in-out infinite;
   transform-origin: 120px 210px;
-}
-.eyes {
-  transform-origin: 120px 138px;
-  animation: blink 5.5s ease-in-out infinite;
-}
-.sheen {
-  animation: sheenSweep 4.8s ease-in-out infinite;
 }
 .agent-caption {
   margin: 0.75rem 0 0;
@@ -359,28 +354,19 @@ h1 {
 
 @keyframes agentFloat {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
+  50% { transform: translateY(-10px); }
 }
-@keyframes dropPulse {
+@keyframes markPulse {
   0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.035); }
+  50% { transform: scale(1.02); }
 }
 @keyframes groundPulse {
   0%, 100% { transform: scaleX(1); opacity: 0.35; }
-  50% { transform: scaleX(0.88); opacity: 0.22; }
-}
-@keyframes blink {
-  0%, 42%, 46%, 100% { transform: scaleY(1); }
-  44% { transform: scaleY(0.12); }
-}
-@keyframes sheenSweep {
-  0%, 100% { opacity: 0; transform: translate(-18px, 8px) rotate(-18deg); }
-  35% { opacity: 0.55; }
-  55% { opacity: 0; transform: translate(28px, -12px) rotate(-18deg); }
+  50% { transform: scaleX(0.9); opacity: 0.22; }
 }
 @keyframes glowPulse {
   0%, 100% { opacity: 0.55; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.1); }
+  50% { opacity: 1; transform: scale(1.08); }
 }
 
 /* sections: sparse, cinematic */
@@ -626,7 +612,7 @@ h1 {
 .footer a { color: var(--cream-dim); }
 
 @media (prefers-reduced-motion: reduce) {
-  .agent, .drop-body, .drop-ground, .eyes, .sheen, .agent-glow {
+  .agent, .mark-body, .mark-ground, .agent-glow {
     animation: none !important;
   }
   html { scroll-behavior: auto; }
