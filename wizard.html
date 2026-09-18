@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+ICA8ZGVmcz4gICAgPGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMzAlIiB5MT0iMTIlIiB4Mj0iNzIlIiB5Mj0iOTIlIj4gICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZmY0ZDQyIi8+ICAgICAgPHN0b3Agb2Zmc2V0PSI1NSUiIHN0b3AtY29sb3I9IiNmZjNiMzAiLz4gICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNiODAwMDAiLz4gICAgPC9saW5lYXJHcmFkaWVudD4gIDwvZGVmcz4gIDxyZWN0IHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgcng9IjE0IiBmaWxsPSIjMGEwNTA1Ii8+ICA8cGF0aCBkPSJNMzIgOEMzMiA4IDE0IDI4IDE0IDQwYzAgMTAuNSA4IDE2IDE4IDE2czE4LTUuNSAxOC0xNkM1MCAyOCAzMiA4IDMyIDhaIiBmaWxsPSJ1cmwoI2cpIi8+ICA8ZWxsaXBzZSBjeD0iMjUiIGN5PSIzMiIgcng9IjYiIHJ5PSI5IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9Ii4yOCIvPjwvc3ZnPg==" type="image/svg+xml">
-<title>DataBye Grok · Wizard</title>
+<title>DataBye · Wizard (simulación)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -479,9 +479,31 @@
     text-decoration: underline;
   }
   .site-footer p { margin: 0.35rem 0; }
+
+  .toast-host {
+    position: fixed; left: 50%; bottom: 1.25rem; transform: translateX(-50%);
+    z-index: 200; display: flex; flex-direction: column; gap: 0.5rem;
+    width: min(420px, calc(100% - 2rem)); pointer-events: none;
+  }
+  .toast {
+    pointer-events: auto; padding: 0.75rem 1rem; border-radius: 12px;
+    background: #1a1a1a; color: #f5f0e6; border: 1px solid rgba(245,240,230,0.18);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.45); font-size: 0.92rem; line-height: 1.4;
+    animation: toastIn 0.25s ease;
+  }
+  .toast.warn { border-color: rgba(255,59,48,0.45); }
+  .toast.info { border-color: rgba(245,240,230,0.28); }
+  .demo-banner {
+    margin: 0 0 1rem; padding: 0.65rem 0.9rem; border-radius: 10px;
+    background: rgba(255,59,48,0.12); border: 1px solid rgba(255,59,48,0.35);
+    color: #f5f0e6; font-size: 0.88rem;
+  }
+  @keyframes toastIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
 </style>
 </head>
 <body>
+<div class="toast-host" id="toast-host" aria-live="polite"></div>
 <div class="grain" aria-hidden="true"></div>
 <div class="wrap">
   <header class="topbar">
@@ -1138,10 +1160,11 @@
   }
 
   function copyHandoff() {
-    if (!$("legal_ack").checked) {
-      alert("Marque el aviso legal antes de continuar.");
+    if (!DEMO && !$("legal_ack").checked) {
+      toast("Marque el aviso legal antes de continuar.", "warn");
       return;
     }
+    if (DEMO && $("legal_ack") && !$("legal_ack").checked) $("legal_ack").checked = true;
     fillHandoff();
     var ta = $("handoff");
     var st = $("handoff-status");
@@ -1165,10 +1188,11 @@
   }
 
   function handoffContinue() {
-    if (!$("legal_ack").checked) {
-      alert("Marque el aviso legal antes de continuar.");
+    if (!DEMO && !$("legal_ack").checked) {
+      toast("Marque el aviso legal antes de continuar.", "warn");
       return;
     }
+    if (DEMO && $("legal_ack") && !$("legal_ack").checked) $("legal_ack").checked = true;
     fillHandoff();
     copyHandoff();
     var st = $("handoff-status");
@@ -1201,18 +1225,47 @@
     try { window.scrollTo({ top: 0, behavior: "smooth" }); } catch (e) { window.scrollTo(0, 0); }
   }
 
+
+  var DEMO = true; // landing simulation: no hard blockers
+
+  function toast(msg, kind) {
+    var host = document.getElementById("toast-host");
+    if (!host) { console.warn(msg); return; }
+    var el = document.createElement("div");
+    el.className = "toast " + (kind || "info");
+    el.textContent = msg;
+    host.appendChild(el);
+    setTimeout(function () { try { el.remove(); } catch (e) {} }, 4200);
+  }
+
   function validateStep(n) {
+    if (DEMO) {
+      if (n === 2) {
+        if ($("full_name") && !$("full_name").value.trim()) $("full_name").value = "María Ejemplo";
+        if ($("emails") && !$("emails").value.trim()) $("emails").value = "maria.ejemplo@example.com";
+        if ($("consent") && !$("consent").checked) $("consent").checked = true;
+        toast("Demo: datos de ejemplo aplicados. En Grok Bot esto sería su consentimiento real.", "info");
+      }
+      if (n === 4) {
+        var keys = Object.keys(selection);
+        if (!keys.some(function (id) { return selection[id] && selection[id].checked; })) {
+          keys.slice(0, 3).forEach(function (id) { if (selection[id]) selection[id].checked = true; });
+          toast("Demo: selección de ejemplo. En Grok Bot usted elige los destinatarios.", "info");
+        }
+      }
+      return true;
+    }
     if (n === 2) {
       var name = ($("full_name").value || "").trim();
       var emails = splitList($("emails").value);
-      if (!name) { alert("Indique el nombre completo."); return false; }
-      if (!emails.length) { alert("Indique al menos un email."); return false; }
-      if (!$("consent").checked) { alert("Necesitamos su consentimiento para continuar."); return false; }
+      if (!name) { toast("Indique el nombre completo.", "warn"); return false; }
+      if (!emails.length) { toast("Indique al menos un email.", "warn"); return false; }
+      if (!$("consent").checked) { toast("Necesitamos su consentimiento para continuar.", "warn"); return false; }
       return true;
     }
     if (n === 4) {
       var any = Object.keys(selection).some(function (id) { return selection[id].checked; });
-      if (!any) { alert("Seleccione al menos un destinatario."); return false; }
+      if (!any) { toast("Seleccione al menos un destinatario.", "warn"); return false; }
       return true;
     }
     return true;
