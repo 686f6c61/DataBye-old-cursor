@@ -7,6 +7,6 @@
     </linearGradient>
   </defs>
   <rect width="64" height="64" rx="14" fill="#0a0505"/>
-  <path d="M32 8C32 8 14 28 14 40c0 10.5 8 16 18 16s18-5.5 18-16C50 28 32 8 32 8Z" fill="url(#g)"/>
-  <ellipse cx="25" cy="32" rx="6" ry="9" fill="#fff" fill-opacity=".28"/>
+  <path d="M32 10c8 0 15 7 18 20 3 14-2 28-18 28S11 44 14 30C17 17 24 10 32 10Z" fill="url(#g)"/>
+  <ellipse cx="26" cy="30" rx="7" ry="8" fill="#fff" fill-opacity=".28"/>
 </svg>
