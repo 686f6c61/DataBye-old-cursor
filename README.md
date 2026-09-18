@@ -6,6 +6,13 @@ DataBye Grok guía a una persona interesada en España a ejercer acceso, oposici
 
 Versión **2.0.0**. Licencia MIT. Solo jurisdicción española (RGPD / LOPDGDD / AEPD). Sin Hermes, sin CLI Python ni SMTP local.
 
+## Usar en Grok Bot
+
+**Añadir DataBye:** [https://x.ai/bot/-M2E0mNqSbuPgYBEtU-Oa](https://x.ai/bot/-M2E0mNqSbuPgYBEtU-Oa)
+
+Tras importar, conecta **Gmail** u **Outlook** (OAuth). Sin eso no se pueden enviar correos. Código auditable en este repo. Landing: [databy.686f6c61.dev](https://databy.686f6c61.dev/).
+
+
 ## Qué incluye este repositorio
 
 | Pieza | Ruta | Para qué |
@@ -24,7 +31,7 @@ Versión **2.0.0**. Licencia MIT. Solo jurisdicción española (RGPD / LOPDGDD /
 Hay dos capas distintas:
 
 1. **Auditoría:** este repositorio en GitHub. Aquí se revisan emails del roster, plantillas, skill y wizard.
-2. **Uso en Grok:** importar o usar la plantilla / skill de DataBye en Grok Bot. El cuerpo de la skill es [`SKILL.md`](./SKILL.md) (puedes pegarlo o instalarlo como skill). Si hay una plantilla pública de bot en Grok, contacta a **686f6c61** en GitHub o en X para el enlace actualizado.
+2. **Uso en Grok:** añade el bot público → [https://x.ai/bot/-M2E0mNqSbuPgYBEtU-Oa](https://x.ai/bot/-M2E0mNqSbuPgYBEtU-Oa) (incluye conectores Gmail y Outlook). El cuerpo auditable de la skill es [`SKILL.md`](./SKILL.md).
 
 Flujo típico en Grok:
 
