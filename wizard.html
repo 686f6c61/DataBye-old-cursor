@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMwYjEyMjAiLz4KICA8cGF0aCBkPSJNMTMgNDZWMThoMTIuNWM4LjIgMCAxMy41IDQuNiAxMy41IDEzLjJTMzMuNyA0NiAyNS41IDQ2SDEzem03LjItNi4yaDVjNC42IDAgNy4zLTIuNSA3LjMtNy4ycy0yLjctNy4xLTcuMy03LjFoLTV2MTQuM3oiIGZpbGw9IiNlOGVlZjciLz4KICA8cGF0aCBkPSJNNDAgMThoNy4yTDU2IDQ2aC03LjJsLTEuNTUtNS4xSDQwLjdMMzkuMTUgNDZIMzIuMkw0MCAxOHptMiAxNi4yaDUuOEw0NSAyNS4ybC0zIDguOTk5eiIgZmlsbD0iIzdkZDNjMCIvPgogIDxjaXJjbGUgY3g9IjUxIiBjeT0iMTUiIHI9IjQiIGZpbGw9IiNmMGM2NzQiLz4KPC9zdmc+" type="image/svg+xml">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+ICA8ZGVmcz4gICAgPGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMzAlIiB5MT0iMTIlIiB4Mj0iNzIlIiB5Mj0iOTIlIj4gICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZmY0ZDQyIi8+ICAgICAgPHN0b3Agb2Zmc2V0PSI1NSUiIHN0b3AtY29sb3I9IiNmZjNiMzAiLz4gICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNiODAwMDAiLz4gICAgPC9saW5lYXJHcmFkaWVudD4gIDwvZGVmcz4gIDxyZWN0IHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgcng9IjE0IiBmaWxsPSIjMGEwNTA1Ii8+ICA8cGF0aCBkPSJNMzIgOEMzMiA4IDE0IDI4IDE0IDQwYzAgMTAuNSA4IDE2IDE4IDE2czE4LTUuNSAxOC0xNkM1MCAyOCAzMiA4IDMyIDhaIiBmaWxsPSJ1cmwoI2cpIi8+ICA8ZWxsaXBzZSBjeD0iMjUiIGN5PSIzMiIgcng9IjYiIHJ5PSI5IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9Ii4yOCIvPjwvc3ZnPg==" type="image/svg+xml">
 <title>DataBye Grok · Wizard</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -368,6 +368,13 @@
     border-radius: 14px;
     backdrop-filter: blur(14px);
   }
+  .brand-drop {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    display: block;
+    filter: drop-shadow(0 0 8px rgba(255, 59, 48, 0.45));
+  }
   .brand {
     display: flex;
     align-items: center;
@@ -480,7 +487,16 @@
   <header class="topbar">
     <div class="topbar-inner">
       <div class="brand">
-        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMwYjEyMjAiLz4KICA8cGF0aCBkPSJNMTMgNDZWMThoMTIuNWM4LjIgMCAxMy41IDQuNiAxMy41IDEzLjJTMzMuNyA0NiAyNS41IDQ2SDEzem03LjItNi4yaDVjNC42IDAgNy4zLTIuNSA3LjMtNy4ycy0yLjctNy4xLTcuMy03LjFoLTV2MTQuM3oiIGZpbGw9IiNlOGVlZjciLz4KICA8cGF0aCBkPSJNNDAgMThoNy4yTDU2IDQ2aC03LjJsLTEuNTUtNS4xSDQwLjdMMzkuMTUgNDZIMzIuMkw0MCAxOHptMiAxNi4yaDUuOEw0NSAyNS4ybC0zIDguOTk5eiIgZmlsbD0iIzdkZDNjMCIvPgogIDxjaXJjbGUgY3g9IjUxIiBjeT0iMTUiIHI9IjQiIGZpbGw9IiNmMGM2NzQiLz4KPC9zdmc+" width="32" height="32" alt="">
+        <svg class="brand-drop" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="wbdg" x1="30%" y1="10%" x2="70%" y2="90%">
+              <stop offset="0%" stop-color="#ff4d42"/>
+              <stop offset="100%" stop-color="#c40000"/>
+            </linearGradient>
+          </defs>
+          <path d="M16 2.5C16 2.5 5.5 14.5 5.5 21c0 6.35 4.7 9.5 10.5 9.5S26.5 27.35 26.5 21C26.5 14.5 16 2.5 16 2.5Z" fill="url(#wbdg)"/>
+          <ellipse cx="12.2" cy="16.5" rx="3.2" ry="5" fill="#fff" fill-opacity=".32"/>
+        </svg>
         <div>
           <div class="brand-title">DataBye Grok</div>
           <div class="brand-sub">asistente · Solo España · Peticiones RGPD</div>

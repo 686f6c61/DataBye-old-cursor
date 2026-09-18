@@ -100,10 +100,17 @@ code {
 }
 .brand {
   display: inline-flex;
-  align-items: baseline;
+  align-items: center;
   gap: 0.55rem;
   text-decoration: none;
   color: var(--cream);
+}
+.brand-drop {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  display: block;
+  filter: drop-shadow(0 0 6px rgba(255, 59, 48, 0.45));
 }
 .brand .mark,
 .footer-brand .mark,
@@ -126,10 +133,40 @@ code {
   font-family: var(--mono);
 }
 .nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   color: var(--cream-dim);
   text-decoration: none;
 }
 .nav a:hover { color: var(--cream); }
+.nav-ico,
+.kicker-ico,
+.card-ico {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.9;
+}
+.nav-cta .nav-ico { opacity: 1; }
+.kicker-ico {
+  width: 14px;
+  height: 14px;
+  opacity: 0.7;
+}
+.card-ico {
+  width: 15px;
+  height: 15px;
+  margin-right: 0.35rem;
+  vertical-align: -0.15em;
+  display: inline-block;
+  opacity: 0.75;
+}
 .nav-cta {
   color: var(--cream) !important;
   border: 1px solid var(--cream-faint);
@@ -156,7 +193,7 @@ code {
   width: min(52vw, 520px);
   height: min(52vw, 520px);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(245,240,230,0.07) 0%, transparent 68%);
+  background: radial-gradient(circle, rgba(255,59,48,0.12) 0%, transparent 68%);
   pointer-events: none;
   filter: blur(8px);
 }
@@ -175,6 +212,9 @@ code {
 }
 
 .kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   font-family: var(--mono);
   font-size: 0.78rem;
   letter-spacing: 0.06em;
@@ -271,7 +311,7 @@ h1 {
 .btn-ghost { background: transparent; }
 .btn-lg { padding: 0.9rem 1.5rem; font-size: 1.02rem; }
 
-/* animated agent */
+/* animated red teardrop agent */
 .hero-agent {
   position: relative;
   width: min(100%, 320px);
@@ -280,10 +320,10 @@ h1 {
 }
 .agent-glow {
   position: absolute;
-  inset: 12% 8%;
+  inset: 8% 4%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(245,240,230,0.14) 0%, transparent 70%);
-  filter: blur(18px);
+  background: radial-gradient(circle, rgba(255, 59, 48, 0.42) 0%, rgba(225, 6, 0, 0.12) 42%, transparent 72%);
+  filter: blur(22px);
   animation: glowPulse 5s ease-in-out infinite;
 }
 .agent {
@@ -291,27 +331,22 @@ h1 {
   height: auto;
   display: block;
   animation: agentFloat 6.5s ease-in-out infinite;
-  filter: drop-shadow(0 0 28px rgba(245, 240, 230, 0.12));
+  filter: drop-shadow(0 0 32px rgba(255, 59, 48, 0.35));
 }
-.orbits {
-  transform-origin: 120px 120px;
-  animation: orbitSpin 22s linear infinite;
+.drop-body {
+  transform-origin: 120px 140px;
+  animation: dropPulse 4.2s ease-in-out infinite;
 }
-.orbit-dot-2 {
-  animation: orbitSpin 14s linear infinite reverse;
-  transform-origin: 120px 120px;
-}
-.blob {
-  transform-origin: 120px 128px;
-  animation: blobPulse 4.2s ease-in-out infinite;
+.drop-ground {
+  animation: groundPulse 6.5s ease-in-out infinite;
+  transform-origin: 120px 210px;
 }
 .eyes {
-  transform-origin: 120px 114px;
+  transform-origin: 120px 138px;
   animation: blink 5.5s ease-in-out infinite;
 }
-.spark {
-  transform-origin: 120px 52px;
-  animation: sparkTwinkle 3.2s ease-in-out infinite;
+.sheen {
+  animation: sheenSweep 4.8s ease-in-out infinite;
 }
 .agent-caption {
   margin: 0.75rem 0 0;
@@ -326,25 +361,26 @@ h1 {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-12px); }
 }
-@keyframes blobPulse {
+@keyframes dropPulse {
   0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.03); }
+  50% { transform: scale(1.035); }
 }
-@keyframes orbitSpin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@keyframes groundPulse {
+  0%, 100% { transform: scaleX(1); opacity: 0.35; }
+  50% { transform: scaleX(0.88); opacity: 0.22; }
 }
 @keyframes blink {
   0%, 42%, 46%, 100% { transform: scaleY(1); }
   44% { transform: scaleY(0.12); }
 }
-@keyframes sparkTwinkle {
-  0%, 100% { opacity: 0.55; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.15); }
+@keyframes sheenSweep {
+  0%, 100% { opacity: 0; transform: translate(-18px, 8px) rotate(-18deg); }
+  35% { opacity: 0.55; }
+  55% { opacity: 0; transform: translate(28px, -12px) rotate(-18deg); }
 }
 @keyframes glowPulse {
   0%, 100% { opacity: 0.55; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.08); }
+  50% { opacity: 1; transform: scale(1.1); }
 }
 
 /* sections: sparse, cinematic */
@@ -436,6 +472,10 @@ h1 {
 }
 .cats > div:first-child { border-top: 1px solid var(--line); }
 .cats dt {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.15rem 0;
   font-family: var(--display);
   font-size: 1.2rem;
   font-weight: 500;
@@ -586,7 +626,7 @@ h1 {
 .footer a { color: var(--cream-dim); }
 
 @media (prefers-reduced-motion: reduce) {
-  .agent, .orbits, .blob, .eyes, .spark, .agent-glow, .orbit-dot-2 {
+  .agent, .drop-body, .drop-ground, .eyes, .sheen, .agent-glow {
     animation: none !important;
   }
   html { scroll-behavior: auto; }

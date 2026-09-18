@@ -1,6 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#0b1220"/>
-  <path d="M13 46V18h12.5c8.2 0 13.5 4.6 13.5 13.2S33.7 46 25.5 46H13zm7.2-6.2h5c4.6 0 7.3-2.5 7.3-7.2s-2.7-7.1-7.3-7.1h-5v14.3z" fill="#e8eef7"/>
-  <path d="M40 18h7.2L56 46h-7.2l-1.55-5.1H40.7L39.15 46H32.2L40 18zm2 16.2h5.8L45 25.2l-3 8.999z" fill="#7dd3c0"/>
-  <circle cx="51" cy="15" r="4" fill="#f0c674"/>
+  <defs>
+    <linearGradient id="g" x1="30%" y1="12%" x2="72%" y2="92%">
+      <stop offset="0%" stop-color="#ff4d42"/>
+      <stop offset="55%" stop-color="#ff3b30"/>
+      <stop offset="100%" stop-color="#b80000"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#0a0505"/>
+  <path d="M32 8C32 8 14 28 14 40c0 10.5 8 16 18 16s18-5.5 18-16C50 28 32 8 32 8Z" fill="url(#g)"/>
+  <ellipse cx="25" cy="32" rx="6" ry="9" fill="#fff" fill-opacity=".28"/>
 </svg>
